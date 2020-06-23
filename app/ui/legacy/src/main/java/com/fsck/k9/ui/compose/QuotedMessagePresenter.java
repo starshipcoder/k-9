@@ -269,7 +269,8 @@ public class QuotedMessagePresenter {
                     // Grab our reply text.
                     bodyText = text.substring(bodyOffset, bodyOffset + bodyLength);
                 }
-                view.setMessageContentCharacters(HtmlConverter.htmlToText(bodyText));
+               // view.setMessageContentCharacters(HtmlConverter.htmlToText(bodyText));
+                view.setMessageContentCharacters(bodyText);
 
                 // Regenerate the quoted html without our user content in it.
                 StringBuilder quotedHTML = new StringBuilder();

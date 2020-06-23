@@ -53,6 +53,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}"
 
+    implementation 'com.github.starshipcoder:Android-Rich-text-Editor:24a5ef4'
+
     testImplementation project(':mail:testing')
     testImplementation project(':app:storage')
     testImplementation project(':app:testing')

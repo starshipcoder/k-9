@@ -6,6 +6,11 @@
 
     <include layout="@layout/toolbar" />
 
+    <com.chinalwb.are.styles.toolbar.ARE_ToolbarDefault
+        android:id="@+id/formatting_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <ViewStub
         android:id="@+id/message_compose_content"
         android:layout="@layout/message_compose_content"
