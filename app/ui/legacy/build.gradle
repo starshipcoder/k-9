@@ -55,6 +55,11 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
     annotationProcessor "com.github.bumptech.glide:compiler:${versions.glide}"
 
+    implementation ('com.github.starshipcoder:AztecEditor-Android:d0a03ee')
+//    implementation ('com.github.starshipcoder:AztecEditor-Android:dev-v1.3.45-SNAPSHOT')
+//    implementation project(":aztec")
+
+
     testImplementation project(':mail:testing')
     testImplementation project(':app:storage')
     testImplementation project(':app:testing')

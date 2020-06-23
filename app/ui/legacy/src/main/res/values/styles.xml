@@ -39,5 +39,14 @@
         <item name="android:button">?attr/messageStar</item>
     </style>
 
+    <style name="FormatToolbarButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/btn_format_toolbar</item>
+    </style>
+
 </resources>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:aztec="http://schemas.android.com/apk/res-auto"
     android:scrollbarStyle="insideOverlay"
     android:fillViewport="true">
 
@@ -46,7 +46,7 @@
         <!-- We have to use "wrap_content" (not "0dip") for "layout_height", otherwise the
              EditText won't properly grow in height while the user is typing the message -->
         <view
-            class="com.fsck.k9.ui.EolConvertingEditText"
+            class="com.fsck.k9.ui.compose.ComposeMessageEditText"
             android:id="@+id/message_content"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -56,8 +56,11 @@
             android:inputType="textMultiLine|textAutoCorrect|textCapSentences"
             android:imeOptions="actionDone|flagNoEnterAction|flagNoExtractUi"
             android:minLines="3"
+            android:lineSpacingExtra="0dp"
             android:paddingLeft="12dip"
             android:paddingRight="12dip"
+            aztec:textColor="#000"
+            aztec:bulletColor="#000"
             style="@style/ComposeEditTextLarge"
             tools:ignore="InefficientWeight" />
 

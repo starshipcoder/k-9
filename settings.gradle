@@ -23,3 +23,6 @@ include ':backend:pop3'
 include ':backend:webdav'
 include ':backend:jmap'
 include ':plugins:openpgp-api-lib:openpgp-api'
+
+//include ':aztec'
+//project(':aztec').projectDir = new File('../AztecEditor-Android/aztec')

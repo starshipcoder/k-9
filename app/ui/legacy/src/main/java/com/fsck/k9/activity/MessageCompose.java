@@ -106,6 +106,7 @@ import com.fsck.k9.ui.EolConvertingEditText;
 import com.fsck.k9.ui.R;
 import com.fsck.k9.ui.base.K9Activity;
 import com.fsck.k9.ui.base.ThemeManager;
+import com.fsck.k9.ui.compose.ComposeMessageEditText;
 import com.fsck.k9.ui.compose.QuotedMessageMvpView;
 import com.fsck.k9.ui.compose.QuotedMessagePresenter;
 import com.fsck.k9.ui.helper.SizeFormatter;
@@ -117,6 +118,8 @@ import com.fsck.k9.ui.permissions.PermissionUiHelper;
 import org.jetbrains.annotations.NotNull;
 import org.openintents.openpgp.OpenPgpApiManager;
 import org.openintents.openpgp.util.OpenPgpApi;
+import org.wordpress.aztec.toolbar.AztecToolbar;
+
 import timber.log.Timber;
 
 
@@ -228,7 +231,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
     private TextView chooseIdentityButton;
     private EditText subjectView;
     private EolConvertingEditText signatureView;
-    private EolConvertingEditText messageContentView;
+    private ComposeMessageEditText messageContentView;
     private LinearLayout attachmentsView;
 
     private String referencedMessageIds;
@@ -481,6 +484,11 @@ public class MessageCompose extends K9Activity implements OnClickListener,
         if (savedInstanceState == null) {
             checkAndRequestPermissions();
         }
+
+        AztecToolbar toolbar = findViewById(R.id.formattingToolbar);
+        toolbar.enableFormatButtons(true);
+        toolbar.setEditor(messageContentView, null);
+        messageContentView.setCalypsoMode(false);
     }
 
     /**
@@ -541,7 +549,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
             CharSequence text = intent.getCharSequenceExtra(Intent.EXTRA_TEXT);
             // Only use EXTRA_TEXT if the body hasn't already been set by the mailto URI
             if (text != null && messageContentView.getText().length() == 0) {
-                messageContentView.setCharacters(text);
+                messageContentView.fromHtml(text.toString(), true);
             }
 
             String type = intent.getType();
@@ -707,7 +715,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
                 .setRequestReadReceipt(requestReadReceipt)
                 .setIdentity(identity)
                 .setMessageFormat(currentMessageFormat)
-                .setText(messageContentView.getCharacters())
+                .setText(messageContentView.toHtml(false))
                 .setAttachments(attachmentPresenter.getAttachments())
                 .setSignature(signatureView.getCharacters())
                 .setSignatureBeforeQuotedText(account.isSignatureBeforeQuotedText())
@@ -1478,7 +1486,7 @@ public class MessageCompose extends K9Activity implements OnClickListener,
 
         String body = mailTo.getBody();
         if (body != null && !body.isEmpty()) {
-            messageContentView.setCharacters(body);
+            messageContentView.fromHtml(body, true);
         }
     }
 

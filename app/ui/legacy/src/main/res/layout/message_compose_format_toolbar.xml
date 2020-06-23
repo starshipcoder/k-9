@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
+
+    <ImageButton
+        android:id="@+id/format_bar_button_bold"
+        style="@style/FormatToolbarButton"
+        android:src="@drawable/ic_baseline_format_bold"
+        android:background="@drawable/btn_format_toolbar"
+        android:contentDescription="@string/format_bar_description_bold"/>
+
+    <ImageButton
+        android:id="@+id/format_bar_button_italic"
+        android:src="@drawable/ic_baseline_format_italic"
+        style="@style/FormatToolbarButton"
+        android:background="@drawable/btn_format_toolbar"
+        android:contentDescription="@string/format_bar_description_italic"/>
+
+    <ImageButton
+        android:id="@+id/format_bar_button_underline"
+        android:src="@drawable/ic_baseline_format_underlined"
+        android:foregroundTint="#fff"
+        style="@style/FormatToolbarButton"
+        android:contentDescription="@string/format_bar_description_underline"/>
+
+    <HorizontalScrollView
+        android:id="@+id/format_bar_button_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <org.wordpress.aztec.toolbar.RippleToggleButton
+        android:id="@+id/format_bar_button_html"
+        style="@style/FormatBarButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+<!--    <org.wordpress.aztec.toolbar.RippleToggleButton-->
+<!--        android:id="@+id/format_bar_button_heading"-->
+<!--        style="@style/FormatBarButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"/>-->
+
+<!--    <org.wordpress.aztec.toolbar.RippleToggleButton-->
+<!--        android:id="@+id/format_bar_button_list"-->
+<!--        style="@style/FormatBarButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"/>-->
+
+
+</LinearLayout>

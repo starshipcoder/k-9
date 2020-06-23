@@ -32,7 +32,7 @@ public class QuotedMessageMvpView {
     private final ImageButton mQuotedTextEdit;
     private final EolConvertingEditText mQuotedText;
     private final MessageWebView mQuotedHTML;
-    private final EolConvertingEditText mMessageContentView;
+    private final ComposeMessageEditText mMessageContentView;
     private final ImageButton mQuotedTextDelete;
 
 
@@ -138,7 +138,7 @@ public class QuotedMessageMvpView {
     }
 
     public void setMessageContentCharacters(String text) {
-        mMessageContentView.setCharacters(text);
+        mMessageContentView.fromHtml(text, true);
     }
 
     public void setMessageContentCursorPosition(int messageContentCursorPosition) {
